@@ -1,7 +1,7 @@
 #Build phase 
 #Use node alpine existing docker image as a base
 FROM node:alpine as builder
-WORKDIR /app/src
+WORKDIR /app
 
 # Download and install a dependency
 COPY ./package.json ./
