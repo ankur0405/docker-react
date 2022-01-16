@@ -5,13 +5,19 @@ services:
     image: ankur0405/docker-react
     build: 
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
     stdin_open: true
     ports:
       - "80:80"
+    volumes:
+      - /app/node_modules
+      - .:/app
   tests:
     build: 
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
     command: ["npm","run","test"]
 
